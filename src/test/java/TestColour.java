@@ -17,14 +17,14 @@ public class TestColour {
 
     @Test
     public void ColourFloatTest() {
-        Colour x = new Colour(0.1, 0.1, 0.1);
-        assert x: "Colour object not created";
+        Colour x = new Colour(0.1f, 0.1f, 0.1f);
+        Assert.assertNotNull("Colour object not created", x);
     }
 
     @Test
     public void ColourBitsTest() {
         Colour x = new Colour("000011110000111100001111");
-        assert x: "Colour object not created";
+        Assert.assertNotNull("Colour object not created", x);
     }
 }
 
