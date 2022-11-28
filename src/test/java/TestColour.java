@@ -1,5 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
+
+
 /*
 * The Colour class must implement the following functionality
 * • A constructor for a Colour object with three parameters which specify the colour components, in
@@ -15,12 +17,14 @@ public class TestColour {
 
     @Test
     public void ColourFloatTest() {
-
+        Colour x = new Colour(0.1, 0.1, 0.1);
+        assert x: "Colour object not created";
     }
 
     @Test
     public void ColourBitsTest() {
-
+        Colour x = new Colour("000011110000111100001111");
+        assert x: "Colour object not created";
     }
 }
 
