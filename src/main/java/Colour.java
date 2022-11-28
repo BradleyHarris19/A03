@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Colour {
     private final float red;
     private final float green;
@@ -22,7 +24,19 @@ public class Colour {
         this.red = redInt/255;
         this.green = greenInt/255;
         this.blue = blueInt/255;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Colour colour = (Colour) o;
+        return Float.compare(colour.red, red) == 0 && Float.compare(colour.green, green) == 0 && Float.compare(colour.blue, blue) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(red, green, blue);
     }
 
     public float getRed() {
