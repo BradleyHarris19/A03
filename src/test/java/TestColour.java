@@ -35,5 +35,12 @@ public class TestColour {
         assert (x.getGreen() == 0.7f) : "Green getter/setter works!";
         assert (x.getBlue() == 0.9f) : "Blue getter/setter works!";
     }
+
+    @Test
+    public void ColourEqualsTest() {
+        Colour x = new Colour(0.1f, 0.1f, 0.1f);
+        Colour y = new Colour(0.1f, 0.1f, 0.1f);
+        assert x.equals(y) : "The colours match!";
+    }
 }
 
