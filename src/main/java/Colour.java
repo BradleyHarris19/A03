@@ -24,4 +24,15 @@ public class Colour {
         this.blue = blueInt/255;
 
     }
+
+    public float getRed() {
+        return red;
+    }
+    public float getGreen() {
+        return green;
+    }
+    public float getBlue() {
+        return blue;
+    }
+
 }

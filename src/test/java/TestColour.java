@@ -17,14 +17,23 @@ public class TestColour {
 
     @Test
     public void ColourFloatTest() {
-        Colour x = new Colour(0.1f, 0.1f, 0.1f);
+        Object x = new Colour(0.1f, 0.1f, 0.1f);
         Assert.assertNotNull("Colour object not created", x);
     }
 
     @Test
     public void ColourBitsTest() {
-        Colour x = new Colour("000011110000111100001111");
+        Object x = new Colour("000011110000111100001111");
         Assert.assertNotNull("Colour object not created", x);
+    }
+
+    @Test
+    public void ColourGettersSettersTest() {
+        Colour x = new Colour(0.1f, 0.1f, 0.1f);
+
+        assert (x.getRed() == 0.5f) : "Red getter/setter works!";
+        assert (x.getGreen() == 0.7f) : "Green getter/setter works!";
+        assert (x.getBlue() == 0.9f) : "Blue getter/setter works!";
     }
 }
 
