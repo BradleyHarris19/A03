@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-
 /*
 * The Colour class must implement the following functionality
 * • A constructor for a Colour object with three parameters which specify the colour components, in
@@ -22,6 +21,12 @@ public class TestColour {
     }
 
     @Test
+    public void ColourFloatOutOfRangeTest() {
+        Assert.assertThrows(IllegalArgumentException.class , () -> new Colour(1.1f, 5f, 0.1f));
+        Assert.assertThrows(IllegalArgumentException.class , () -> new Colour(0.1f, -5f, -0.1f));
+    }
+
+    @Test
     public void ColourBitsTest() {
         Object x = new Colour("000011110000111100001111");
         Assert.assertNotNull("Colour object not created", x);
@@ -31,9 +36,9 @@ public class TestColour {
     public void ColourGettersSettersTest() {
         Colour x = new Colour(0.1f, 0.1f, 0.1f);
 
-        assert (x.getRed() == 0.5f) : "Red getter/setter works!";
-        assert (x.getGreen() == 0.7f) : "Green getter/setter works!";
-        assert (x.getBlue() == 0.9f) : "Blue getter/setter works!";
+        assert (x.getRed() != 0.5f) : "Red getter/setter not working";
+        assert (x.getGreen() != 0.7f) : "Green getter/setter not working";
+        assert (x.getBlue() != 0.9f) : "Blue getter/setter not working";
     }
 
     @Test
