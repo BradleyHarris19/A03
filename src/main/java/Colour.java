@@ -6,10 +6,21 @@ public class Colour {
     private final float blue;
 
     public Colour(float r, float g, float b) {
-        this.red = r;
-        this.green = g;
-        this.blue = b;
-
+        if ((0 <= r) & (r <= 1)) {
+            this.red = r;
+        } else {
+            throw new IllegalArgumentException("Red value out of range 0-1");
+        }
+        if ((0 <= g) & (g <= 1)) {
+            this.green = g;
+        } else {
+            throw new IllegalArgumentException("Green value out of range 0-1");
+        }
+        if ((0 <= b) & (b <= 1)) {
+            this.blue = b;
+        } else {
+            throw new IllegalArgumentException("Blue value out of range 0-1");
+        }
     }
 
     public Colour(String bitstring) {
